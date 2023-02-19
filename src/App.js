@@ -3,13 +3,17 @@ import Button from './Button';
 const App = () => {
   return (
     <div>
-      <Button success>Hi!</Button>
-      <Button success warning>
-        Hi!
+      <Button primary rounded outline>
+        Primary
       </Button>
-      <Button>Hi!</Button>
-      <Button>Hi!</Button>
-      <Button>Hi!</Button>
+      <Button secondary rounded>
+        Secondary
+      </Button>
+      <Button success outline>
+        Success
+      </Button>
+      <Button warning>Warning</Button>
+      <Button danger>Danger</Button>
     </div>
   );
 };
