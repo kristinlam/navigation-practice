@@ -1,19 +1,9 @@
-import Button from './Button';
+import ButtonPage from './pages/ButtonPage';
 
 const App = () => {
   return (
     <div>
-      <Button primary rounded outline>
-        Primary
-      </Button>
-      <Button secondary rounded>
-        Secondary
-      </Button>
-      <Button success outline>
-        Success
-      </Button>
-      <Button warning>Warning</Button>
-      <Button danger>Danger</Button>
+      <ButtonPage />
     </div>
   );
 };
