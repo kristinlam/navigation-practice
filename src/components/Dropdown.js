@@ -1,8 +1,12 @@
 import { useState } from 'react';
 
-const Dropdown = ({ options }) => {
+const Dropdown = ({ options, selection, onSelect }) => {
   const renderedOptions = options.map((option) => {
-    return <div key={option.value}>{option.label}</div>;
+    return (
+      <div onClick={() => handleOptionClick(option)} key={option.value}>
+        {option.label}
+      </div>
+    );
   });
   const [isOpen, setIsOpen] = useState(false);
 
@@ -10,9 +14,14 @@ const Dropdown = ({ options }) => {
     setIsOpen(!isOpen);
   };
 
+  const handleOptionClick = (option) => {
+    setIsOpen(false);
+    onSelect(option);
+  };
+
   return (
     <div>
-      <div onClick={handleClick}>Select a color</div>
+      <div onClick={handleClick}>{selection?.label || 'Select a color'}</div>
       {isOpen && <div>{renderedOptions}</div>}
     </div>
   );
