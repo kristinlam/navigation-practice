@@ -1,11 +1,15 @@
 import { createPortal } from 'react-dom';
 
-const Modal = () => {
+const Modal = ({ onClose, children, actionBar }) => {
   return createPortal(
     <div>
-      <div className="absolute inset-0 bg-gray-300 opacity-80"></div>
+      <div
+        onClick={onClose}
+        className="absolute inset-0 bg-gray-300 opacity-80"
+      ></div>
       <div className="absolute inset-40 p-10 bg-white">
-        <p>Modal text here</p>
+        {children}
+        {actionBar}
       </div>
     </div>,
 
