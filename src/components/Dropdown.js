@@ -18,7 +18,7 @@ const Dropdown = ({ options, value, onChange }) => {
     return () => {
       document.removeEventListener('click', closeDropdown);
     };
-  });
+  }, []);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
